@@ -8,18 +8,18 @@ export const site = {
   tagline: "Frontend web apps & Flutter mobile apps, built by a contractor who ships.",
 
   // TODO: swap in your real name / handle — shown in the footer and About section.
-  ownerName: "Your Name",
+  ownerName: "Serge Kamel",
 
   // TODO: real contact email. Used for the mailto: link and shown as text.
-  email: "hello@frontendienst.dev",
+  email: "faultless.git@gmail.com",
 
   // TODO: freeform location / availability line, e.g. "Based in Berlin · Remote, EU timezones"
   location: "Remote · Available for contract & freelance work",
 
   // TODO: fill in the profiles you actually want linked; delete any you don't use.
   socials: [
-    { label: "GitHub", href: "https://github.com/your-handle" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/your-handle" },
+    { label: "GitHub", href: "https://github.com/Faultless" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/serge~kamel" },
   ],
 
   // Shown in <title> and meta description.
