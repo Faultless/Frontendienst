@@ -1,0 +1,28 @@
+---
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="work">
+  <div class="wrap">
+    <span class="eyebrow">Selected work</span>
+    <h2 class="section-heading">Three shipped side projects, three different problems.</h2>
+    <p class="section-lede">
+      These are personal projects, not client work under NDA — which means you
+      can actually see the code and the finished product. Each one covers a
+      different corner of what I do day to day.
+    </p>
+
+    <div class="project-list">
+      {projects.map((project, i) => (
+        <ProjectCard project={project} reverse={i % 2 === 1} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-list {
+    margin-top: 40px;
+  }
+</style>

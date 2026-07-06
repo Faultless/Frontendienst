@@ -1,0 +1,59 @@
+---
+import { site } from "../site.config";
+---
+
+<section id="contact">
+  <div class="wrap contact-card card">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="section-heading">Have a frontend or Flutter build that needs a contractor?</h2>
+      <p class="section-lede">
+        Tell me about the project, the stack, and the timeline. I'll reply
+        with whether it's a fit and roughly what it'd take.
+      </p>
+    </div>
+    <div class="contact-actions">
+      <a href={`mailto:${site.email}`} class="btn btn-primary">{site.email}</a>
+      <div class="socials">
+        {site.socials.map((s) => (
+          <a href={s.href} class="pill" target="_blank" rel="noopener">{s.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-card {
+    padding: 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .socials {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 780px) {
+    .contact-card {
+      grid-template-columns: 1fr;
+      padding: 36px 24px;
+    }
+  }
+</style>

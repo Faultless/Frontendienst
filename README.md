@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# frontendienst
 
-```sh
-bun create astro@latest -- --template minimal
-```
+Portfolio site for frontendienst — Astro + TypeScript, no framework runtime,
+static output.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command          | Action                                      |
+| :--------------- | :------------------------------------------ |
+| `bun install`     | Install dependencies                        |
+| `bun run dev`     | Start the dev server at `localhost:4321`    |
+| `bun run build`   | Build the production site to `./dist/`      |
+| `bun run preview` | Preview the production build locally        |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Where to edit things
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Business details** (your name, email, tagline, location, social links) —
+  `src/site.config.ts`. Everything there is marked with a `TODO` comment.
+- **Project copy & tech stack tags** — `src/data/projects.ts`.
+- **Placeholder media** — every project ships a generated SVG placeholder
+  (and SpinTop ships a placeholder MP4) so the layout is real from day one.
+  Replace them with actual recordings:
+  1. Record/export a screenshot, GIF, or short screen capture from the app.
+  2. Drop the file into `public/images/projects/<project>/` (images) or
+     `public/video/` (video).
+  3. Update the matching `media.image` / `media.video` path in
+     `src/data/projects.ts` to point at the new file.
+  A project card renders a `<video>` automatically if `media.video` is set,
+  otherwise it falls back to `media.image`.
+- **Sections/layout** — each section of the page is its own component under
+  `src/components/` (`Hero`, `Services`, `Projects`, `About`, `Contact`,
+  `Footer`), assembled in `src/pages/index.astro`.
+- **Colors/fonts/spacing** — CSS custom properties in `src/styles/global.css`.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploying to GitHub Pages
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+A workflow at `.github/workflows/deploy.yml` builds and deploys on every push
+to `main` using GitHub's official Pages actions.
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Push this repo to GitHub.
+2. In the repo's **Settings → Pages**, set **Source** to "GitHub Actions".
+3. Push to `main` (or run the workflow manually) — the site publishes to
+   `https://<your-username>.github.io/<repo-name>/`.
 
-## 🧞 Commands
+`astro.config.mjs` reads `GITHUB_REPOSITORY` (which GitHub Actions sets
+automatically) to compute the `site`/`base` config, so no username or repo
+name needs to be hardcoded. The one exception: if this repo IS your user/org
+page (named exactly `<your-username>.github.io`), it's served from the domain
+root — the config already detects that case and uses `base: "/"`.
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If you'd rather use a custom domain, add a `public/CNAME` file with your
+domain in it and point its DNS at GitHub Pages — `base` should then be `"/"`
+too (edit `astro.config.mjs` to hardcode `base: "/"` in that case, since the
+repo name no longer matters).

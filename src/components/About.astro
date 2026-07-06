@@ -1,0 +1,73 @@
+---
+import { site } from "../site.config";
+---
+
+<section id="about">
+  <div class="wrap about-inner">
+    <div>
+      <span class="eyebrow">About</span>
+      <h2 class="section-heading">Why hire a solo contractor over an agency.</h2>
+      <p class="section-lede">
+        {/* TODO: this is a starting draft — rewrite in your own voice / add a real bio + photo. */}
+        I'm {site.ownerName}, and {site.name} is how I take on contract and
+        freelance work outside a day job spent building production React,
+        TypeScript, and Flutter apps. Every project on this page is something
+        I designed, built, and shipped alone — front to back — which is the
+        same way I work with clients: one person who owns the whole problem,
+        not a hand-off between three specialists.
+      </p>
+      <p class="section-lede">
+        That means faster iteration, fewer meetings, and code you can hand to
+        your own team afterward without a translation layer.
+      </p>
+    </div>
+    <ul class="stats">
+      <li><strong>3+</strong><span>shipped side projects, all live in this portfolio</span></li>
+      <li><strong>2</strong><span>platforms per project on average — mobile, web, and desktop from one codebase</span></li>
+      <li><strong>0</strong><span>hand-offs — one person designs, builds, and ships</span></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .about-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  .stats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-self: center;
+  }
+
+  .stats li {
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent);
+  }
+
+  .stats strong {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--text);
+  }
+
+  .stats span {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 780px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import { site } from "../site.config";
+---
+
+<section id="top" class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Independent frontend & Flutter contractor</span>
+    <h1 class="hero-title">
+      I build <span class="grad">frontend web apps</span>, <span class="grad">Flutter mobile apps</span>, and the odd <span class="grad">browser game</span> — end to end.
+    </h1>
+    <p class="hero-lede">
+      {site.tagline} I work with companies that need a contractor who can take
+      a product from a blank repo to something real users open every day —
+      complex UI state, live data, custom rendering, all of it.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">See the work</a>
+      <a href={`mailto:${site.email}`} class="btn btn-secondary">{site.email}</a>
+    </div>
+    <p class="hero-meta">{site.location}</p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 88px;
+    padding-bottom: 72px;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    margin-top: 20px;
+  }
+
+  .grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-lede {
+    margin-top: 22px;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 62ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .hero-meta {
+    margin-top: 20px;
+    color: var(--text-faint);
+    font-size: 0.9rem;
+  }
+</style>

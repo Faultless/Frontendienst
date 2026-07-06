@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12151d"/>
+      <stop offset="100%" stop-color="#1c2130"/>
+    </linearGradient>
+    <pattern id="diag" width="40" height="40" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="transparent"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#e0698e" stroke-opacity="0.10" stroke-width="14"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <rect width="1280" height="800" fill="url(#diag)"/>
+  <rect x="0" y="0" width="1280" height="800" fill="none" stroke="#e0698e" stroke-opacity="0.35" stroke-width="3"/>
+  <g transform="translate(640,340)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
+    <text y="0" font-size="44" font-weight="700" fill="#e0698e" letter-spacing="1">LINGUAPOP</text>
+    <text y="46" font-size="20" fill="#a4abbb">Japanese language-learning reader</text>
+  </g>
+  <g transform="translate(640,460)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
+    <text font-size="15" fill="#6b7182" letter-spacing="2">REPLACE THIS FILE — DROP IN A REAL SCREENSHOT OR GIF</text>
+  </g>
+  <circle cx="640" cy="230" r="6" fill="#e0698e"/>
+</svg>

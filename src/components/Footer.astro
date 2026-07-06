@@ -1,0 +1,27 @@
+---
+import { site } from "../site.config";
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© {year} {site.name}</span>
+    <span class="footer-location">{site.location}</span>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    padding-block: 32px;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--text-faint);
+    font-size: 0.85rem;
+  }
+</style>
