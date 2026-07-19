@@ -52,9 +52,10 @@ export type Project = {
   platform: "Mobile app" | "Browser game" | "Browser extension / app" | "Web app";
   accent: string; // CSS color used for this project's card accent
   media: ProjectMedia;
-  // TODO: fill in once you have somewhere to point people — an app store
-  // listing, an itch.io page, a GitHub repo, etc. Leave undefined to hide the link.
+  // Live destination (store listing, itch.io page, hosted demo). Hidden if undefined.
   link?: string;
+  // Slug of a case study under /case-studies/. Hidden if undefined.
+  caseStudy?: string;
 };
 
 export const projects: Project[] = [
@@ -82,6 +83,7 @@ export const projects: Project[] = [
   {
     slug: "chronomap",
     category: "mobile",
+    caseStudy: "chronomap",
     name: "Chronomap",
     tagline: "An interactive history & geography map you can scrub through time.",
     description:
@@ -98,10 +100,12 @@ export const projects: Project[] = [
     media: {
       image: "/images/projects/chronomap/gameplay.png",
     },
+    link: "https://faultless.github.io/chronomap/",
   },
   {
     slug: "linguapop",
     category: "mobile",
+    caseStudy: "linguapop",
     name: "LinguaPop",
     tagline: "A Japanese language-learning novel reader.",
     description:
@@ -118,10 +122,12 @@ export const projects: Project[] = [
     media: {
       image: "/images/projects/linguapop/gameplay.png",
     },
+    link: "https://faultless.github.io/linguapop-extension",
   },
   {
     slug: "spintop",
     category: "gaming",
+    caseStudy: "spintop",
     name: "SpinTop Arena",
     tagline: "A beyblade-style physics battler, built for the browser.",
     description:
@@ -138,6 +144,7 @@ export const projects: Project[] = [
     media: {
       image: "/images/projects/spintop/gameplay.png",
     },
+    link: "https://parastoner.itch.io/spintop-arena",
   },
   {
     slug: "kotodama",

@@ -41,11 +41,18 @@ const { project, reverse = false } = Astro.props;
       {project.stack.map((t) => <span class="pill">{t}</span>)}
     </div>
 
-    {project.link && (
-      <a href={project.link} class="btn btn-secondary link-btn" target="_blank" rel="noopener">
-        View project ↗
-      </a>
-    )}
+    <div class="card-actions">
+      {project.caseStudy && (
+        <a href={withBase(`/case-studies/${project.caseStudy}/`)} class="btn btn-primary">
+          Read the case study
+        </a>
+      )}
+      {project.link && (
+        <a href={project.link} class="btn btn-secondary" target="_blank" rel="noopener">
+          See it live ↗
+        </a>
+      )}
+    </div>
   </div>
 </article>
 
@@ -163,7 +170,10 @@ const { project, reverse = false } = Astro.props;
     margin-top: 20px;
   }
 
-  .link-btn {
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 22px;
   }
 
