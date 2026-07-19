@@ -96,7 +96,16 @@ export async function verify(options: VerifyOptions): Promise<VerifyReport> {
     // Canvas-rendered apps (Phaser games etc.) legitimately have zero DOM
     // text — a visible, non-empty canvas counts as rendered content.
     const canvasCount = await page.evaluate(() => {
-      return Array.from(document.querySelectorAll("canvas")).filter((c) => {
+      // Walk shadow roots too — Flutter web (flt-glass-pane) and other
+      // frameworks render their canvas inside shadow DOM.
+      const collect = (root: Document | ShadowRoot): HTMLCanvasElement[] => {
+        const found = [...root.querySelectorAll("canvas")] as HTMLCanvasElement[];
+        for (const el of root.querySelectorAll("*")) {
+          if (el.shadowRoot) found.push(...collect(el.shadowRoot));
+        }
+        return found;
+      };
+      return collect(document).filter((c) => {
         const rect = c.getBoundingClientRect();
         return rect.width > 0 && rect.height > 0;
       }).length;
