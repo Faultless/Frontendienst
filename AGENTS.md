@@ -22,8 +22,9 @@ portfolio site (`apps/site`). Read `docs/VISION.md` for intent and
 - **Verify before declaring done:** run the verify loop
   (`bun run verify -- <url>`, see `harness/verify/`) — it checks server
   readiness, console/page errors, and takes screenshots.
-- `@fex/kit` comes from a local checkout at `~/Projects/fex` (unpublished,
-  Bun-only). If it's missing, clone `github.com:Faultless/fex` there.
+- `harness/verify` is self-contained (Playwright + pixelmatch directly —
+  see ADR 0003's amendment). For multi-viewport baseline testing locally,
+  the owner's `fex vr` CLI (from `~/Projects/fex`) complements it.
 
 ## Workspace map
 

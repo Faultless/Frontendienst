@@ -1,6 +1,6 @@
 # ADR 0003 — verification loop on top of @fex/kit
 
-Date: 2026-07-19 · Status: accepted
+Date: 2026-07-19 · Status: accepted (amended same day — see bottom)
 
 ## Context
 
@@ -37,8 +37,21 @@ subprocess rather than reimplementing.
 
 ## Consequences
 
-- This repo requires Bun and a local checkout of fex at `~/Projects/fex`
-  (documented in AGENTS.md). If that coupling ever hurts, vendor the two
-  small modules — they have no fex-internal dependencies beyond Playwright.
 - Playwright + pixelmatch + pngjs become devDependencies of
-  `harness/verify` (they're optional peers of `@fex/kit`).
+  `harness/verify`.
+
+## Amendment (2026-07-19)
+
+Implementation dropped the `@fex/kit` dependency for two reasons found
+while building:
+
+1. **Pre-navigation listeners.** `withPage` navigates before the callback
+   runs, so `page.on("console"/"pageerror")` collectors attached in the
+   callback miss load-time errors — the errors we most care about. We need
+   raw Playwright with listeners attached before `goto`.
+2. **CI.** A `file:` dependency on a sibling `~/Projects/fex` checkout
+   breaks `bun install --frozen-lockfile` in GitHub Actions.
+
+`harness/verify` therefore uses Playwright/pixelmatch directly, borrowing
+fex's patterns (stabilization CSS, diff-ratio assert) rather than its code.
+`fex vr` remains the tool for multi-viewport baseline testing locally.
