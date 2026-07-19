@@ -23,9 +23,8 @@ const { project, reverse = false } = Astro.props;
         controls
       />
     ) : (
-      <img src={withBase(project.media.image)} alt={`${project.name} placeholder screenshot — replace with a real capture`} loading="lazy" />
+      <img src={withBase(project.media.image)} alt={`${project.name} capture`} loading="lazy" />
     )}
-    <span class="media-label">placeholder — swap for a real capture</span>
   </div>
 
   <div class="content">
