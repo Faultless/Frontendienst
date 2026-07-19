@@ -26,6 +26,8 @@ jobs:
       # nest each under the site's dist as a live demo at /apps/<name>/.
       - run: bun run --filter @frontendienst/kakeibo build
       - run: mkdir -p apps/site/dist/apps/kakeibo && cp -r apps/kakeibo/dist/. apps/site/dist/apps/kakeibo/
+      - run: bun run --filter @frontendienst/karakuri build
+      - run: mkdir -p apps/site/dist/apps/karakuri && cp -r apps/karakuri/dist/. apps/site/dist/apps/karakuri/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/site/dist

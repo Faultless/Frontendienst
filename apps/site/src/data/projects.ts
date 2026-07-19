@@ -81,6 +81,27 @@ export const projects: Project[] = [
     link: "./apps/kakeibo/",
   },
   {
+    slug: "karakuri",
+    category: "business",
+    name: "karakuri からくり",
+    tagline: "Programming, one block at a time.",
+    description:
+      "A Scratch-style block-programming environment that teaches programming principles through turtle graphics. Snap blocks together and watch your program run as an observable process: a sandboxed interpreter executes it step by step, highlighting each block as the turtle draws — loops, nesting, and abstraction made visible.",
+    highlights: [
+      "Stepped execution with live block highlighting — a speed slider turns 'the computer runs your code' into something you can watch and pause",
+      "Custom turtle blocks alongside Blockly's loops, math, logic, variables, and functions",
+      "Lessons as data with geometric validators: 'The square' teaches loops, 'The staircase' teaches nesting — the app checks what you actually drew",
+      "Workspace auto-saves locally with JSON export/import — no accounts, no cloud",
+    ],
+    stack: ["TypeScript", "React 19", "Vite", "Blockly", "JS-Interpreter", "Canvas", "Tailwind CSS v4", "Vitest"],
+    platform: "Web app",
+    accent: "#f59e0b",
+    media: {
+      image: "/images/projects/karakuri/editor.png",
+    },
+    link: "./apps/karakuri/",
+  },
+  {
     slug: "chronomap",
     category: "mobile",
     caseStudy: "chronomap",

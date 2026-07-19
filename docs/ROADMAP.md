@@ -18,9 +18,10 @@ Last updated: 2026-07-19
 - [x] Product sites: LinguaPop (Pages workflow: landing / + web app /app/, Netlify-ready) and Chronomap (same; awaiting `Faultless/chronomap` repo creation on GitHub to push)
 - [x] `skills/game-assets` (CC0-first sourcing, license manifest, fetch scripts)
 
+- [x] karakuri vertical slice (Blockly + JS-Interpreter stepped turtle graphics, 2 lessons with geometric validators) + portfolio card + live demo at /apps/karakuri/
+
 ## Next
 
-- [ ] karakuri (Blockly + JS-Interpreter turtle-graphics teaching app, ADR 0005) — build agent died at session limit; only a package.json stub exists in apps/karakuri, restart the build
 - [ ] kakeibo Lessons 2–5 (T-accounts, trial balance deep-dive, statements, closing the books) + reports page with charts
 - [ ] `stacks/web-app` as a copyable template extracted from kakeibo
 
