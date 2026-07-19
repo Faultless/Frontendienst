@@ -92,12 +92,27 @@ export async function verify(options: VerifyOptions): Promise<VerifyReport> {
       .replace(/\s+/g, " ")
       .trim()
       .slice(0, 600);
-    if (textSample.length === 0) notes.push("Page body rendered no text at all");
+
+    // Canvas-rendered apps (Phaser games etc.) legitimately have zero DOM
+    // text — a visible, non-empty canvas counts as rendered content.
+    const canvasCount = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll("canvas")).filter((c) => {
+        const rect = c.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0;
+      }).length;
+    });
+    if (textSample.length === 0) {
+      notes.push(
+        canvasCount > 0
+          ? `No DOM text, but ${canvasCount} visible canvas element(s) — canvas-rendered app`
+          : "Page body rendered no text at all",
+      );
+    }
 
     const ok =
       errorCount(errors) === 0 &&
       (httpStatus === null || httpStatus < 400) &&
-      textSample.length > 0;
+      (textSample.length > 0 || canvasCount > 0);
 
     return { ok, url, httpStatus, errors, screenshot, textSample, notes };
   } finally {

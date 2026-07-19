@@ -10,8 +10,9 @@ Last updated: 2026-07-19
 - [x] `apps/kakeibo` vertical slice: chart of accounts + simple-transfer entries + Lesson 1 (accounting equation + trial balance, live from user data)
 - [x] `skills/phaser-game` distilled from spintop / kotodama / grimoire
 - [x] Wire kakeibo as a live demo into the portfolio site + deploy workflow
-- [ ] `stacks/phaser-game` runnable template (in progress)
-- [ ] Real screenshots for all portfolio project cards (in progress)
+- [x] `stacks/phaser-game` runnable template (`@frontendienst/phaser-template`: intent input, bus, persist, WebAudio synth, procedural textures, Boot/Title/Play/Hud/Pause; verified + headless behavioral smoke test)
+- [x] Real screenshots for all portfolio project cards (Playwright captures of live gameplay)
+- [x] Portfolio sections aligned to services: Business / Mobile / Gaming
 
 ## Next
 
