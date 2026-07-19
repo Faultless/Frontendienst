@@ -1,22 +1,28 @@
 ---
 const services = [
   {
-    title: "Frontend Web Apps",
+    title: "Business",
+    subtitle: "Frontend web apps",
     blurb:
       "Production React/TypeScript front ends — component architecture, state management, and the unglamorous plumbing (auth, forms, data fetching) done right.",
     tags: ["React", "TypeScript", "Astro", "Three.js", "Vite", "MUI"],
+    workAnchor: "#work-business",
   },
   {
-    title: "Flutter Mobile Apps",
+    title: "Mobile",
+    subtitle: "Flutter apps",
     blurb:
       "Cross-platform apps that ship to Android, iOS, web, and desktop from one codebase — custom rendering, offline-first data, and native-feeling interactions.",
     tags: ["Flutter", "Dart", "Riverpod", "go_router", "Hive"],
+    workAnchor: "#work-mobile",
   },
   {
-    title: "Interactive & Game Builds",
+    title: "Gaming",
+    subtitle: "Interactive & game builds",
     blurb:
       "Canvas/WebGL-driven experiences beyond standard CRUD apps — custom physics, procedural rendering, and real-time interaction loops.",
     tags: ["Phaser", "WebGL", "Canvas", "WebAudio"],
+    workAnchor: "#work-gaming",
   },
 ];
 
@@ -42,10 +48,12 @@ const traits = [
       {services.map((s) => (
         <div class="card service-card">
           <h3>{s.title}</h3>
+          <span class="subtitle">{s.subtitle}</span>
           <p>{s.blurb}</p>
           <div class="tags">
             {s.tags.map((t) => <span class="pill">{t}</span>)}
           </div>
+          <a class="work-link" href={s.workAnchor}>See the {s.title.toLowerCase()} work →</a>
         </div>
       ))}
     </div>
@@ -72,7 +80,26 @@ const traits = [
   }
 
   .service-card h3 {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
+  }
+
+  .service-card .subtitle {
+    margin-top: -8px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
+
+  .work-link {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+
+  .work-link:hover {
+    color: var(--text, #fff);
   }
 
   .service-card p {

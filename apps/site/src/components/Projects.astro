@@ -1,28 +1,75 @@
 ---
-import { projects } from "../data/projects";
+import { categories, projects } from "../data/projects";
 import ProjectCard from "./ProjectCard.astro";
 ---
 
 <section id="work">
   <div class="wrap">
     <span class="eyebrow">Selected work</span>
-    <h2 class="section-heading">Three shipped side projects, three different problems.</h2>
+    <h2 class="section-heading">Shipped work, sorted by what you need.</h2>
     <p class="section-lede">
       These are personal projects, not client work under NDA — which means you
-      can actually see the code and the finished product. Each one covers a
-      different corner of what I do day to day.
+      can actually see the code and the finished product. Pick the lane that
+      matches your project.
     </p>
 
-    <div class="project-list">
-      {projects.map((project, i) => (
-        <ProjectCard project={project} reverse={i % 2 === 1} />
-      ))}
-    </div>
+    {categories.map((category) => {
+      const items = projects.filter((p) => p.category === category.id);
+      if (items.length === 0) return null;
+      return (
+        <div class="category" id={category.anchor}>
+          <header class="category-header">
+            <h3>{category.title}</h3>
+            <p>{category.blurb}</p>
+          </header>
+          <div class="project-list">
+            {items.map((project, i) => (
+              <ProjectCard project={project} reverse={i % 2 === 1} />
+            ))}
+          </div>
+        </div>
+      );
+    })}
   </div>
 </section>
 
 <style>
+  .category {
+    margin-top: 72px;
+    /* Keep anchored jumps clear of the sticky header. */
+    scroll-margin-top: 90px;
+  }
+
+  .category-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  }
+
+  .category-header h3 {
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .category-header h3::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: var(--gradient);
+  }
+
+  .category-header p {
+    color: var(--text-dim);
+    font-size: 0.98rem;
+    max-width: 640px;
+  }
+
   .project-list {
-    margin-top: 40px;
+    margin-top: 12px;
   }
 </style>

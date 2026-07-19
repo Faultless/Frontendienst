@@ -7,8 +7,43 @@ export type ProjectMedia = {
   video?: string;
 };
 
+export type CategoryId = "business" | "mobile" | "gaming";
+
+export type Category = {
+  id: CategoryId;
+  /** Anchor id used in the work section and linked from service cards. */
+  anchor: string;
+  title: string;
+  blurb: string;
+};
+
+export const categories: Category[] = [
+  {
+    id: "business",
+    anchor: "work-business",
+    title: "Business",
+    blurb:
+      "Web apps that run on data: dashboards, domain-heavy workflows, and the API plumbing underneath them — backed by ten years of production React/TypeScript/NodeJS work. Local-first where it fits, tested where it counts.",
+  },
+  {
+    id: "mobile",
+    anchor: "work-mobile",
+    title: "Mobile",
+    blurb:
+      "Flutter apps that ship to Android, iOS, web, and desktop from one codebase — custom rendering and offline-first data included. Both apps below grew out of a daily practice of studying Japanese language, history, and culture.",
+  },
+  {
+    id: "gaming",
+    anchor: "work-gaming",
+    title: "Gaming",
+    blurb:
+      "Gaming is the passion lane: browser games and real-time interactive builds with custom physics, procedural art, synthesized audio, and the game-feel polish in between.",
+  },
+];
+
 export type Project = {
   slug: string;
+  category: CategoryId;
   name: string;
   tagline: string;
   description: string;
@@ -25,6 +60,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "kakeibo",
+    category: "business",
     name: "kakeibo 家計簿",
     tagline: "Manage your money and learn real accounting while you do it.",
     description:
@@ -45,6 +81,7 @@ export const projects: Project[] = [
   },
   {
     slug: "chronomap",
+    category: "mobile",
     name: "Chronomap",
     tagline: "An interactive history & geography map you can scrub through time.",
     description:
@@ -64,6 +101,7 @@ export const projects: Project[] = [
   },
   {
     slug: "linguapop",
+    category: "mobile",
     name: "LinguaPop",
     tagline: "A Japanese language-learning novel reader.",
     description:
@@ -83,6 +121,7 @@ export const projects: Project[] = [
   },
   {
     slug: "spintop",
+    category: "gaming",
     name: "SpinTop Arena",
     tagline: "A beyblade-style physics battler, built for the browser.",
     description:
@@ -102,6 +141,7 @@ export const projects: Project[] = [
   },
   {
     slug: "kotodama",
+    category: "gaming",
     name: "Kotodama 言霊剣",
     tagline: "A Japanese-typing samurai game — your keyboard is the sword.",
     description:
@@ -121,6 +161,7 @@ export const projects: Project[] = [
   },
   {
     slug: "grimoire",
+    category: "gaming",
     name: "Grimoire",
     tagline: "A 2D magic-slinging arena brawler where every spell casts differently.",
     description:
