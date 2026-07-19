@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - run: bun install --frozen-lockfile
+      - run: bun install
       - run: bun run site:build
       # App demos build with base './' so they work from any sub-path;
       # nest each under the site's dist as a live demo at /apps/<name>/.
