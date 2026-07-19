@@ -96,7 +96,7 @@ export const projects: Project[] = [
     platform: "Mobile app",
     accent: "#d99a4e",
     media: {
-      image: "/images/projects/chronomap/placeholder-1.svg",
+      image: "/images/projects/chronomap/gameplay.png",
     },
   },
   {
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     platform: "Mobile app",
     accent: "#e0698e",
     media: {
-      image: "/images/projects/linguapop/placeholder-1.svg",
+      image: "/images/projects/linguapop/gameplay.png",
     },
   },
   {
