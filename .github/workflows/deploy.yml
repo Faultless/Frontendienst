@@ -21,10 +21,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
-      - run: bun run build
+      - run: bun run site:build
+      # App demos are built with a base path and nested under the site's
+      # dist so each ships as a live demo at /apps/<name>/.
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: apps/site/dist
 
   deploy:
     needs: build
