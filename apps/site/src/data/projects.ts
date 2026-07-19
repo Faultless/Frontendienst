@@ -14,7 +14,7 @@ export type Project = {
   description: string;
   highlights: string[];
   stack: string[];
-  platform: "Mobile app" | "Browser game" | "Browser extension / app";
+  platform: "Mobile app" | "Browser game" | "Browser extension / app" | "Web app";
   accent: string; // CSS color used for this project's card accent
   media: ProjectMedia;
   // TODO: fill in once you have somewhere to point people — an app store
@@ -23,6 +23,26 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "kakeibo",
+    name: "kakeibo 家計簿",
+    tagline: "Manage your money and learn real accounting while you do it.",
+    description:
+      "A local-first personal finance app built on genuine double-entry bookkeeping. Every simple 'money moved from X to Y' you record is shown as the journal entry it really is — debits, credits, and all — and the Learn section teaches accounting principles live from your own books instead of textbook examples.",
+    highlights: [
+      "A real double-entry engine: normal balances, entry validation, trial balance, and the accounting equation — fully unit-tested and impossible to unbalance from the UI",
+      "The entry form doubles as a teacher: it previews the journal entry your transaction generates and explains why each side is debited or credited",
+      "Lessons computed from your live data — watch Assets = Liabilities + Equity hold over your actual finances",
+      "Local-first: everything lives in your browser (IndexedDB) with one-click JSON export/import — no accounts, no cloud",
+    ],
+    stack: ["TypeScript", "React 19", "Vite", "TanStack Router", "Dexie (IndexedDB)", "Tailwind CSS v4", "Vitest", "Playwright"],
+    platform: "Web app",
+    accent: "#34d399",
+    media: {
+      image: "/images/projects/kakeibo/new-entry.png",
+    },
+    link: "./apps/kakeibo/",
+  },
   {
     slug: "chronomap",
     name: "Chronomap",
