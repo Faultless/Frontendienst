@@ -97,8 +97,45 @@ export const projects: Project[] = [
     platform: "Browser game",
     accent: "#e2543b",
     media: {
-      image: "/images/projects/spintop/placeholder-1.svg",
-      video: "/video/spintop-placeholder.mp4",
+      image: "/images/projects/spintop/gameplay.png",
+    },
+  },
+  {
+    slug: "kotodama",
+    name: "Kotodama 言霊剣",
+    tagline: "A Japanese-typing samurai game — your keyboard is the sword.",
+    description:
+      "Type romaji to slash your way through Edo-period Japan. Words fly at you as enemies close in; every correctly typed kana is a sword stroke. A journey mode walks you from JLPT N5 vocabulary in the Edo countryside toward Kyoto, dojo by dojo, era by era.",
+    highlights: [
+      "An NFA-based romaji matcher that accepts every valid romanization of a kana sequence as you type it",
+      "JLPT-graded progression (N5 upward) with a journey map, dojos, and roadside encounters",
+      "Sprite-sheet art with graceful procedural fallbacks — the game stays playable even if an asset fails to load",
+      "Hybrid audio: sampled instruments with a per-slot synth fallback on the hirajoshi scale",
+    ],
+    stack: ["TypeScript", "Phaser 3", "Vite", "WebAudio", "Custom NFA matcher"],
+    platform: "Browser game",
+    accent: "#b23a48",
+    media: {
+      image: "/images/projects/kotodama/title.png",
+    },
+  },
+  {
+    slug: "grimoire",
+    name: "Grimoire",
+    tagline: "A 2D magic-slinging arena brawler where every spell casts differently.",
+    description:
+      "A platform-arena brawl between mages, installable as a PWA. The core idea: each spell family has its own cast mechanic — holds, flicks, slings, channels — so switching loadouts changes how your hands play the game, not just the numbers. Fight AI mages across arenas or warm up in the practice range.",
+    highlights: [
+      "Data-driven spell registry: every spell implements lifecycle hooks and a cast mode, dispatched by one casting system",
+      "One entity class serves player and AI alike, driven through the same movement-intent interface",
+      "Fully procedural textures and particle juice — soft-dot glows, shockwaves, hit-stop — generated at boot",
+      "Intent-based input layer with a parallel touch scheme; installable offline-first PWA",
+    ],
+    stack: ["TypeScript", "Phaser 3", "Vite", "Arcade Physics", "PWA"],
+    platform: "Browser game",
+    accent: "#7c6ff0",
+    media: {
+      image: "/images/projects/grimoire/gameplay.png",
     },
   },
 ];
