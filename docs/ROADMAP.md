@@ -14,12 +14,15 @@ Last updated: 2026-07-19
 - [x] Real screenshots for all portfolio project cards (Playwright captures of live gameplay)
 - [x] Portfolio sections aligned to services: Business / Mobile / Gaming
 
+- [x] Case studies (SpinTop / LinguaPop / Chronomap) with live links; SaaS-credible copy
+- [x] Product sites: LinguaPop (Pages workflow: landing / + web app /app/, Netlify-ready) and Chronomap (same; awaiting `Faultless/chronomap` repo creation on GitHub to push)
+- [x] `skills/game-assets` (CC0-first sourcing, license manifest, fetch scripts)
+
 ## Next
 
+- [ ] karakuri (Blockly + JS-Interpreter turtle-graphics teaching app, ADR 0005) — build agent died at session limit; only a package.json stub exists in apps/karakuri, restart the build
 - [ ] kakeibo Lessons 2–5 (T-accounts, trial balance deep-dive, statements, closing the books) + reports page with charts
 - [ ] `stacks/web-app` as a copyable template extracted from kakeibo
-- [ ] Blocks app spike: evaluate Blockly vs custom canvas for the Scratch-style app
-- [ ] Asset pipeline for games: sourcing (Kenney/OpenGameArt/itch CC0), manifest, attribution tracking
 
 ## Later
 
