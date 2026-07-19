@@ -15,7 +15,7 @@ const { cs } = Astro.props;
 const project = projects.find((p) => p.slug === cs.projectSlug);
 ---
 
-<Layout title={`${cs.title} — case study · ${site.name}`} description={cs.subtitle}>
+<Layout title={`${cs.title} · case study · ${site.name}`} description={cs.subtitle}>
   <Header />
   <main>
     <article class="wrap study">
@@ -34,7 +34,7 @@ const project = projects.find((p) => p.slug === cs.projectSlug);
       </div>
 
       <div class="hero-media">
-        <img src={withBase(cs.hero)} alt={`${cs.title} — hero capture`} />
+        <img src={withBase(cs.hero)} alt={`${cs.title} screenshot`} />
       </div>
 
       <dl class="facts">

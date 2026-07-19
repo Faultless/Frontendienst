@@ -5,7 +5,7 @@
 
 export const site = {
   name: "frontendienst",
-  tagline: "Frontend web apps & Flutter mobile apps, built by a contractor who ships.",
+  tagline: "Frontend web apps and Flutter mobile apps, built by a contractor who actually ships.",
 
   // TODO: swap in your real name / handle — shown in the footer and About section.
   ownerName: "Serge Kamel",
@@ -24,7 +24,7 @@ export const site = {
 
   // Shown in <title> and meta description.
   seo: {
-    title: "frontendienst — Frontend & Flutter contractor",
+    title: "frontendienst · Frontend & Flutter contractor",
     description:
       "Independent contractor building frontend web apps, Flutter mobile apps, and browser games. See live projects: an interactive history map, a language-learning reader, and a physics battle game.",
   },

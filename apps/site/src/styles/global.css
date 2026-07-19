@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
 
 :root {
-  --bg: #0b0d12;
-  --bg-raised: #12151d;
-  --bg-card: #161a24;
-  --border: #262b38;
-  --text: #eef0f4;
-  --text-dim: #a4abbb;
-  --text-faint: #6b7182;
+  --bg: #120e0a;
+  --bg-raised: #1b1510;
+  --bg-card: #201812;
+  --border: #382b1e;
+  --text: #f6ede1;
+  --text-dim: #c7b6a0;
+  --text-faint: #8a7a67;
 
-  --accent: #5ee6c8;
-  --accent-strong: #7c9bff;
-  --gradient: linear-gradient(120deg, #5ee6c8 0%, #7c9bff 55%, #b48cff 100%);
+  --accent: #eba849;
+  --accent-strong: #e2703f;
+  --gradient: linear-gradient(120deg, #eba849 0%, #e2703f 55%, #bd4f4f 100%);
 
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -35,8 +35,8 @@ body {
   margin: 0;
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(94, 230, 200, 0.10), transparent 60%),
-    radial-gradient(ellipse 900px 600px at 90% 10%, rgba(124, 155, 255, 0.10), transparent 60%);
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(235, 168, 73, 0.12), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 90% 10%, rgba(189, 79, 79, 0.10), transparent 60%);
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.55;
@@ -134,7 +134,7 @@ section {
 
 .btn-primary {
   background: var(--gradient);
-  color: #0b0d12;
+  color: #1a0f08;
 }
 
 .btn-secondary {
